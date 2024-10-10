@@ -1,0 +1,51 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #066acd;
+
+}
+.container{
+  width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border: 8px;
+  border-radius: 8px;
+
+}
+input{
+  height: 45px;
+  font-size: 18px;
+  padding-left: 5px ;
+}
+.botaoAdicionarItem{
+  height: 45px;
+  width: 60px;
+  margin-left: 5px;
+  background-color: #066acd;
+  border: none;
+  color: #fff;
+  cursor:pointer;
+  font-size: 15px;
+}
+.lista{
+ width: 100%;
+ margin-top: 10px;
+ list-style: none;
+}
+.item{
+  background-color: #e8e3e3;
+  margin:5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.ex
