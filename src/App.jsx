@@ -5,19 +5,47 @@ function App(){
  const [inputText,setInputText] = useState("");
  
  function handleAdicionaItem(){
-    setItemList([...itemList,inputText]);
+    const textoSemEspacos = inputText.trim();
+    if(textoSemEspacos == "") return;
+ 
+    let newItem = {
+      id: Date.now(),
+      itemLista: textoSemEspacos,
+    };
+    setItemList([...itemList,newItem]);
     setInputText("");
  }
+ function handleExcluirItem(item){
+  setItemList(prevList => prevList.filter(lista  => lista != item));
+ }
+
+
  return (
  <div className="container">
-    <input type="text" value={inputText} onChange={(e)=> setInputText(e.target.value)} />
-    <button className="botaoAdicionarItem" onClick={handleAdicionaItem}>Add</button>
+  <div>
+    <h1 className="tituloPrincipal">Lista de Tarefas</h1>
+    <input 
+      type="text" 
+      value={inputText} 
+      onChange={(e)=> setInputText(e.target.value)} />
+
+    <button className="botaoAdicionarItem" onClick={handleAdicionaItem}>
+      Add
+    </button>
+
+  </div>
+
     <ul className="lista">
-      {itemList.map((item,i) => ( 
-        <li className="item" key={i}>{item} 
-           <button className="excluirItem">X</button>
+      {itemList.map((item) => ( 
+        <li className="item" key={item.id}>
+          {item.itemLista}   
+          <button 
+            className="excluirItem" 
+            onClick={()=> handleExcluirItem(item)}>
+            X
+          </button>
         </li>))}
     </ul>
  </div>)
 };
-export default App
+export default App;

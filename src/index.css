@@ -15,10 +15,18 @@ body{
 .container{
   width: 400px;
   background-color: #fff;
+  flex-direction: column; 
+  align-items:center;
   padding: 30px;
   border: 8px;
   border-radius: 8px;
+  display: flex;
 
+}
+.tituloPrincipal{
+  padding-bottom: 14px;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
 }
 input{
   height: 45px;
@@ -48,4 +56,8 @@ input{
   justify-content: space-between;
 
 }
-.ex
+.excluirItem{
+  height: 24px;
+  width: 30px;
+  cursor:pointer;
+}
